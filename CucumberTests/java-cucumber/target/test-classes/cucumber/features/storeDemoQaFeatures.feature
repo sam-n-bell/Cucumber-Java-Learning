@@ -1,5 +1,5 @@
-#Author: your.email@your.domain.com
-#Keywords Summary :
+#Author: bell.sam@Outlook.com
+#Keywords Summary : Demo of using Cucumber with Java
 #Feature: List of scenarios.
 #Scenario: Business rule through list of steps with arguments.
 #Given: Some precondition step
@@ -11,15 +11,19 @@
 #Background: List of steps run before each of the scenarios
 #""" (Doc Strings)
 #| (Data Tables)
-#@ (Tags/Labels):To group Scenarios 
+#@ (Tags/Labels):To group Scenarios
 #<> (placeholder)
 #""
 ## (Comments)
-
 #Sample Feature Definition Template
-Feature: Proof of concept that my framework works
+Feature: I can use store.demoqa.com
 
-Scenario: My first test
-Given I navigate to demoqa.com
-When I click on My Account
-Then I expect to see a login page
+  Scenario: Reach Login Page
+    Given I am on store.demoqa.com
+    When I click on My Account
+    Then I expect to see a login page
+
+  Scenario: Reach Login Page
+    Given I am on store.demoqa.com
+    When I go to the iPhone product page
+    Then I expect to see iPhone 4S listed

@@ -1,6 +1,5 @@
 package cucumber.features;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import cucumber.api.java.After;
@@ -15,22 +14,33 @@ import toolsqa.demoqa.pages.YourAccountPage;
 public class StepDefinitions {
 	WebDriver driver;
 	
-	@Given("^I navigate to demoqa.com$")
-	public void navigateToDemoQA() throws Throwable {
+	@Given("^I am on store.demoqa.com$")
+	public void navigateToDemoQA() throws Throwable 
+	{
 		driver = DriverCreator.getChromeDriver();
 		driver.get("http://store.demoqa.com/");
 		driver.manage().window().maximize();
 	}
+	
+	@When("^I go to the iPhone product page")
+	public void navigateToIphoneProductPage()
+	{
+		ScriptUtils.waitForXSeconds(driver, 5);
+		StoreDemoQA_HomePage homePage = new StoreDemoQA_HomePage(driver);
+		
+	}
 
 	@When("^I click on My Account$")
-	public void clickOnMyAccount() throws Throwable {
+	public void clickOnMyAccount() throws Throwable 
+	{
 		ScriptUtils.waitForXSeconds(driver, 5);
 		StoreDemoQA_HomePage homePage = new StoreDemoQA_HomePage(driver);
 		homePage.clickMyAccount();
 	}
 
 	@Then("^I expect to see a login page$")
-	public void checkForLoginScreen() throws Throwable {
+	public void checkForLoginScreen() throws Throwable 
+	{
 		ScriptUtils.waitForXSeconds(driver, 5);
 		YourAccountPage accountPage = new YourAccountPage(driver);
 		String text = accountPage.returnYouMustBeLoggedInText();
@@ -39,12 +49,20 @@ public class StepDefinitions {
 		{
 			foundMessage = true;
 		}
-		assert(foundMessage == true);
-		
+		assert(foundMessage == true);	
+	}
+	
+	
+	
+	@Then("^I expect to see iPhone 4S listed$")
+	public void checkForIphone4s() throws Throwable 
+	{
+			
 	}
 	
 	@After
-	public void quitWebDriver(){
+	public void quitWebDriver()
+	{
 		if (driver != null)
 		{
 			driver.quit();
