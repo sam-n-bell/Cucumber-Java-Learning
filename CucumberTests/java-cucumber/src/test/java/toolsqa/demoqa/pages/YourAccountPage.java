@@ -21,17 +21,6 @@ public class YourAccountPage
 		return text;
 	}
 	
-	private void hoverOverProductCategory()
-	{
-		Actions action = new Actions(driver);
-		WebElement prodCat = driver.findElement(By.xpath("//*[@id=\"menu-item-33\"]/a"));
-		action.moveToElement(prodCat).build().perform();
-	}
 	
-	public void selectProductCategory()
-	{
-		hoverOverProductCategory();
-		driver.findElement(By.xpath("//*[@id=\"menu-item-37\"]/a"));
-	}
 
 }
