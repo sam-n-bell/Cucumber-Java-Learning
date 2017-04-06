@@ -23,7 +23,13 @@ Feature: I can use store.demoqa.com
     When I click on My Account
     Then I expect to see a login page
 
-  Scenario: Reach Login Page
+  Scenario Outline: Add product to cart and check price
     Given I am on store.demoqa.com
     When I go to the iPhone product page
-    Then I expect to see iPhone 4S listed
+    And I add iPhone 4S 16GB to cart
+    And I click go to checkout
+    Then I expect to see a subtotal of <value>
+
+Examples:
+		| value |
+    | $270.00 |

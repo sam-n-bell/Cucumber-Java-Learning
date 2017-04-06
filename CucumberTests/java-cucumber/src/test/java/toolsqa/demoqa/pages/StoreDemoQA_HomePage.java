@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import selenium.utils.ScriptUtils;
+
 public class StoreDemoQA_HomePage 
 {
 	
@@ -27,10 +29,14 @@ private WebDriver driver;
 		action.moveToElement(prodCat).build().perform();
 	}
 	
-	public void selectProductCategory()
+	public void selectIphoneProductCategory()
 	{
 		hoverOverProductCategory();
-		driver.findElement(By.xpath("//*[@id=\"menu-item-37\"]/a"));
+		Actions action = new Actions(driver);
+		WebElement iPhonesCat = driver.findElement(By.xpath("//*[@id=\"menu-item-37\"]/a"));
+		//action.moveToElement(iPhonesCat).build().perform();
+		ScriptUtils.waitForXSeconds(driver, 3);
+		driver.findElement(By.linkText("iPhones")).click();
 	}
 
 }
