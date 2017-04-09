@@ -9,11 +9,11 @@ import cucumber.api.java.en.When;
 import junit.framework.Assert;
 import selenium.drivers.DriverCreator;
 import selenium.utils.ScriptUtils;
-import toolsqa.demoqa.pages.StoreDemoQA_CartPopUp;
-import toolsqa.demoqa.pages.StoreDemoQA_CheckoutPage;
-import toolsqa.demoqa.pages.StoreDemoQA_HomePage;
-import toolsqa.demoqa.pages.StoreDemoQA_IphonesProductPage;
-import toolsqa.demoqa.pages.YourAccountPage;
+import store.demoqa.pages.StoreDemoQA_CartPopUp;
+import store.demoqa.pages.StoreDemoQA_CheckoutPage;
+import store.demoqa.pages.StoreDemoQA_HomePage;
+import store.demoqa.pages.StoreDemoQA_IphonesProductPage;
+import store.demoqa.pages.YourAccountPage;
 import toolsqa.store.demoqa.constants.StoreDemoQaConstants;
 
 public class StepDefinitions {
